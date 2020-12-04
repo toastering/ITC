@@ -40,10 +40,6 @@ int Crash(HMODULE hModule, unsigned int method) {
 		LeaveCriticalSection(nullptr);
 		break;
 
-	case 10:
-		CloseWindow(NULL);
-		break;
-
 	default:
 		exit(EXIT_FAILURE);
 		break;
@@ -51,7 +47,7 @@ int Crash(HMODULE hModule, unsigned int method) {
 }
 
 DWORD WINAPI entry(HMODULE hModule) {
-	Crash(hModule, 10);
+	Crash(hModule, 8);
 	return 0;
 }
 
